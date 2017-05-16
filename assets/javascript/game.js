@@ -14,7 +14,7 @@ $(document).ready(function() {
 	function newCrystals () {
 		var numbers = []
 			while(numbers.length < 4){
-			  var randomnumber = Math.ceil(Math.random()*12)
+			  var randomnumber = Math.ceil(Math.random()*12)  //generates smallest integer greater than or equal to given number define (12)
 			  var found = false;
 			  for (var i=0; i< numbers.length; i++){
 				if (numbers[i] == randomnumber){
@@ -35,10 +35,16 @@ $(document).ready(function() {
 		}
 	}
 
+
+
+
 	function newGame() {
 
 		counter = 0;
+		
 		$('#yourScore').text(counter);
+
+
 
 		function randomIntFromInterval(min,max){
 		   	return Math.floor(Math.random()*(max-min+1)+min);
@@ -62,6 +68,8 @@ $(document).ready(function() {
 		      $('#crystals').empty();
 		      newCrystals();
 		      newGame();
+		      
+		     
 		        
 		    } else if ( counter > numberToGuess){
 		        $('#status').text('You lost!'); //need to add reset functon
@@ -71,8 +79,15 @@ $(document).ready(function() {
 		        $('#crystals').empty();
 		        newCrystals();
 		        newGame();
+		        
+
 		    }
 		});
 	}
 
 });
+
+
+// function resetform() {
+//document.getElementById("#status").reset();  OR  $("#status").reset();
+//}
