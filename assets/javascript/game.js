@@ -7,11 +7,13 @@ $(document).ready(function() {
 	var losses = 0;
 	$('#wins').text(wins);
 	$('#losses').text(losses);
-	
+
 	newCrystals();
 	newGame();
 
 	function newCrystals () {
+
+
 		var numbers = []
 			while(numbers.length < 4){
 			  var randomnumber = Math.ceil(Math.random()*12)  //generates smallest integer greater than or equal to given number define (12)
@@ -23,7 +25,7 @@ $(document).ready(function() {
 			  }
 			  if(!found)numbers[numbers.length]=randomnumber;
 			}
-		console.log(numbers);		
+		console.log(numbers);
 
 		for (i = 0; i < numbers.length; i++) {
 			var imageCrystal = $('<img>');
@@ -33,6 +35,7 @@ $(document).ready(function() {
 			imageCrystal.addClass('crystalImage')
 			$('#crystals').append(imageCrystal);
 		}
+
 	}
 
 
@@ -41,8 +44,9 @@ $(document).ready(function() {
 	function newGame() {
 
 		counter = 0;
-		
+
 		$('#yourScore').text(counter);
+
 
 
 
@@ -55,9 +59,12 @@ $(document).ready(function() {
 		$('.value').text(numberToGuess);
 
 
+
+
 		$('.crystalImage').on('click', function(){
+			$('#status').empty();
 		    counter = counter + parseInt($(this).data('num'));
-		   
+
 		    $('#yourScore').text(counter);
 
 		    if (counter == numberToGuess){
@@ -68,9 +75,9 @@ $(document).ready(function() {
 		      $('#crystals').empty();
 		      newCrystals();
 		      newGame();
-		      
-		     
-		        
+
+
+
 		    } else if ( counter > numberToGuess){
 		        $('#status').text('You lost!'); //need to add reset functon
 		        losses ++;
@@ -79,7 +86,8 @@ $(document).ready(function() {
 		        $('#crystals').empty();
 		        newCrystals();
 		        newGame();
-		        
+
+
 
 		    }
 		});
