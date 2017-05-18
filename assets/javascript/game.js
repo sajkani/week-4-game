@@ -68,7 +68,7 @@ $(document).ready(function() {
 		    $('#yourScore').text(counter);
 
 		    if (counter == numberToGuess){
-		      $('#status').text('You won!!!!'); //need to add reset function
+		      $('#status').text('You won!!!!'); 
 		      wins ++;
 		      $('#wins').text(wins);
 		      console.log(wins)
@@ -79,7 +79,7 @@ $(document).ready(function() {
 
 
 		    } else if ( counter > numberToGuess){
-		        $('#status').text('You lost!'); //need to add reset functon
+		        $('#status').text('You lost!'); 
 		        losses ++;
 		        $('#losses').text(losses);
 		        console.log(losses)
@@ -94,8 +94,3 @@ $(document).ready(function() {
 	}
 
 });
-
-
-// function resetform() {
-//document.getElementById("#status").reset();  OR  $("#status").reset();
-//}
